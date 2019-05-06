@@ -15,6 +15,8 @@ find_package(Qt4 REQUIRED COMPONENTS
   QtGui
 )
 
+find_package(OpenCV REQUIRED)
+
 ################################################
 ## Declare ROS messages, services and actions ##
 ################################################
@@ -57,7 +59,7 @@ include_directories(
   ${CMAKE_CURRENT_BINARY_DIR}
 )
 add_library(qt_lib ${QT_SOURCES} ${QT_FORMS_HPP} ${QT_MOC_HPP})
-target_link_libraries(qt_lib ${QT_LIBRARIES} ${catkin_LIBRARIES})
+target_link_libraries(qt_lib ${QT_LIBRARIES} ${catkin_LIBRARIES} ${OPENCV_LIBS})
 
 add_library(framer_lib include/framer/framer.h  src/framer.cpp)
 target_link_libraries(framer_lib qt_lib)

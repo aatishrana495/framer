@@ -7,7 +7,14 @@
 #include <ros/ros.h>
 #include <std_msgs/Int16.h>
 #include <std_msgs/Int8.h>
-#include <ros/package.h>				
+#include <ros/package.h>
+#include "ui_framer.h"	
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/core/core.hpp>	
+#include <boost/lexical_cast.hpp>
+#include <string>		
+
+
 
 namespace Ui {
 class Framer;
@@ -15,14 +22,24 @@ class Framer;
 
 class Framer : public QMainWindow
 {
-    Q_OBJECT
+	Q_OBJECT
+
+
 
 public:
-    explicit Framer(QWidget *parent = 0);
-    ~Framer();
-     QPixmap logo;
+	explicit Framer(QWidget *parent = 0);
+	~Framer();
+	QPixmap logo;
+public slots:
+	void show_next_frame();
+	void show_prev_frame();
+	void save_present_frame();
+	void frame_generator();
+
 private:
-    Ui::Framer *ui;
+	Ui::Framer *ui;
+	int count_proc,count_save;
+	Mat frame;
 };
 
 #endif // FRAMER_H
