@@ -8,11 +8,10 @@
 #include <std_msgs/Int16.h>
 #include <std_msgs/Int8.h>
 #include <ros/package.h>
-#include "ui_framer.h"	
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/core/core.hpp>	
+#include "ui_framer.h"
+
 #include <boost/lexical_cast.hpp>
-#include <string>		
+#include <string>
 
 
 
@@ -39,7 +38,7 @@ public slots:
 private:
 	Ui::Framer *ui;
 	int count_proc,count_save;
-	Mat frame;
+	
 };
 
 #endif // FRAMER_H
