@@ -69,7 +69,7 @@
      <string>Previous Frame</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_2">
+   <widget class="QLineEdit" name="video_text">
     <property name="geometry">
      <rect>
       <x>490</x>
@@ -78,21 +78,33 @@
       <height>22</height>
      </rect>
     </property>
+    <property name="inputMask">
+     <string/>
+    </property>
     <property name="text">
-     <string>Select video folder</string>
+     <string>enter the video folder</string>
+    </property>
+    <property name="readOnly">
+     <bool>false</bool>
+    </property>
+    <property name="clearButtonEnabled">
+     <bool>false</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_3">
+   <widget class="QLineEdit" name="destination_text">
     <property name="geometry">
      <rect>
       <x>680</x>
       <y>20</y>
-      <width>171</width>
+      <width>181</width>
       <height>22</height>
      </rect>
     </property>
     <property name="text">
      <string>Select destination folder</string>
+    </property>
+    <property name="clearButtonEnabled">
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QTextEdit" name="textEdit">
@@ -190,7 +202,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QLineEdit" name="frame_save">
     <property name="geometry">
      <rect>
-      <x>280</x>
+      <x>770</x>
       <y>170</y>
       <width>191</width>
       <height>31</height>
@@ -227,6 +239,71 @@ p, li { white-space: pre-wrap; }
     </property>
     <property name="text">
      <string>Prev Frame</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="reset_all">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>180</y>
+      <width>80</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Reset all</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="reset_video_path">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>80</y>
+      <width>151</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Reset Video folder</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="reset_destination_path">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>80</y>
+      <width>161</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Reset Destination folder</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="check_bottom">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>130</y>
+      <width>131</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>bottom camera</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="check_front">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>130</y>
+      <width>131</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>front camera</string>
     </property>
    </widget>
   </widget>

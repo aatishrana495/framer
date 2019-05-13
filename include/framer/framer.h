@@ -28,11 +28,14 @@ public slots:
   void show_prev_frame();
   void save_present_frame();
   void frame_generator();
+  void reset_all();
+  void reset_video_path();
+  void reset_destination_path();
 
 private:
   Ui::Framer *ui;
   cv::VideoCapture cap;
-  std::string LOGO_PATH, load_image_path;
+  std::string LOGO_PATH, load_image_path, VIDEO_PATH, DESTINATION_PATH;
   int count_proc, count_save;
   cv::Mat frame_current, frame_prev;
 };
