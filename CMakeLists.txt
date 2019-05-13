@@ -9,6 +9,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   roslib
 )
+find_package(OpenCV REQUIRED)
 
 find_package(Qt4 REQUIRED COMPONENTS
   QtCore
@@ -54,6 +55,7 @@ include(
 
 include_directories(
   include
+  ${OpenCV_INCLUDE_DIRS}
   ${catkin_INCLUDE_DIRS}
   ${QT_INCLUDE_DIRS}
   ${CMAKE_CURRENT_BINARY_DIR}
@@ -62,7 +64,7 @@ add_library(qt_lib ${QT_SOURCES} ${QT_FORMS_HPP} ${QT_MOC_HPP})
 target_link_libraries(qt_lib ${QT_LIBRARIES} ${catkin_LIBRARIES} ${OPENCV_LIBS})
 
 add_library(framer_lib include/framer/framer.h  src/framer.cpp)
-target_link_libraries(framer_lib qt_lib)
+target_link_libraries(framer_lib qt_lib ${OpenCV_LIBS})
 
 add_executable(framer src/main.cpp)
-target_link_libraries(framer framer_lib)
+target_link_libraries(framer framer_lib ${OpenCV_LIBS})

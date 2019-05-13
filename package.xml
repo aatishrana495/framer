@@ -53,15 +53,19 @@
   <build_depend>qt_build</build_depend>
   <build_depend>roscpp</build_depend>
   <build_depend>roslib</build_depend>
- 
+   <build_depend>OpenCV</build_depend>
+
   <build_export_depend>qt_build</build_export_depend>
   <build_export_depend>roscpp</build_export_depend>
   <build_export_depend>roslib</build_export_depend>
+  <build_export_depend>OpenCV</build_export_depend>
+
 
   <exec_depend>message_runtime</exec_depend>
   <exec_depend>qt_build</exec_depend>
   <exec_depend>roscpp</exec_depend>
   <exec_depend>roslib</exec_depend>
+  <exec_depend>OpenCV</exec_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->
