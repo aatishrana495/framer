@@ -32,7 +32,7 @@ public slots:
 private:
   Ui::Framer *ui;
   cv::VideoCapture cap;
-  std::string logo_path, load_image_path;
+  std::string LOGO_PATH, load_image_path;
   int count_proc, count_save;
   cv::Mat frame_current, frame_prev;
 };
