@@ -3,6 +3,7 @@
 Framer::Framer(QWidget *parent) : QMainWindow(parent), ui(new Ui::Framer) {
   LOGO_PATH = ros::package::getPath("framer") + "/utils/logo.jpeg";
   VIDEO_PATH = "/media/kookies/DATA/Tiburon/SAVe tasks/path.mp4";
+  DESTINATION_PATH = "/home/kookies";
   ui->setupUi(this);
   this->frame_generator();
   logo.load(LOGO_PATH.c_str());
@@ -44,6 +45,9 @@ void Framer::show_prev_frame() {
 
 void Framer::save_present_frame() {
   count_save++;
+  str = std::to_string(count_save);
+  frame_name = "frame_" + str + ".png";
+  imwrite(DESTINATION_PATH + "/" + frame_name, frame_current);
   ui->frame_save->setText("Frame saved: " + QString::number(count_save));
 }
 
@@ -63,7 +67,7 @@ void Framer::reset_video_path() {
 void Framer::reset_destination_path() {}
 
 void Framer::frame_generator() {
-  cap.open(0);
+  cap.open(VIDEO_PATH);
   count_proc = 0;
   count_save = 0;
   ui->frame_proc->setText("Frame processed: " + QString::number(count_proc));

@@ -5,6 +5,7 @@
 #include <QMainWindow>
 #include <QPixmap>
 #include <QTimer>
+
 #include <opencv2/opencv.hpp>
 #include <ros/package.h>
 #include <ros/ros.h>
@@ -35,7 +36,8 @@ public slots:
 private:
   Ui::Framer *ui;
   cv::VideoCapture cap;
-  std::string LOGO_PATH, load_image_path, VIDEO_PATH, DESTINATION_PATH;
+  std::string LOGO_PATH, load_image_path, VIDEO_PATH, DESTINATION_PATH, str,
+      frame_name;
   int count_proc, count_save;
   cv::Mat frame_current, frame_prev;
 };
